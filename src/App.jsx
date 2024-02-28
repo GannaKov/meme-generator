@@ -11,3 +11,4 @@ const App = () => {
 };
 
 export default App;
+//"homepage": "https://gannakov.github.io/template-react-vite-modcss/",
