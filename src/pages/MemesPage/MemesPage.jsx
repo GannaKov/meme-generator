@@ -115,6 +115,7 @@ const MemesPage = () => {
           type="button"
           onClick={handlePrevBtnClick}
           className={styles.memeBtn}
+          disabled={number === 0}
         >
           Previous
         </button>
@@ -122,6 +123,7 @@ const MemesPage = () => {
           type="button"
           onClick={handleNextBtnClick}
           className={styles.memeBtn}
+          disabled={number === memes.length - 1}
         >
           Next
         </button>

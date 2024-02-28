@@ -24,8 +24,9 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: 1px solid gray;
+  /* border: 1px solid gray; */
   cursor: pointer;
+  box-shadow: 0 1px 3px #6d035f1f, 0 0 5px #7228790f, 0 0 8px #00000029;
   /* background-color: red; */
 }
 .memeCard {
@@ -85,6 +86,16 @@
   background-color: green;
   color: white;
 }
+.memeBtn:disabled,
+.memeBtn[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.memeBtn:disabled:is(:focus, :hover) {
+  background-color: white;
+  color: rgba(16, 16, 16, 0.3);
+  opacity: 0.5;
+}
 .memeForm {
   margin: 0 auto 1rem;
 }
@@ -96,7 +107,7 @@
   outline: 1px solid transparent;
   border: 1px solid gray;
   border-radius: 5px;
-  background-color: transparent;
+  background-color: white;
   width: 300px;
   height: 30px;
 }
@@ -104,4 +115,5 @@
   border: 2px solid gray;
   /* background-color: white; */
 }
+
 /* font-family: "Impacted", sans-serif; */
