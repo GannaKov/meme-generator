@@ -1,11 +1,18 @@
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
-
-import Example from "./components/Example/Example";
+import MemesPage from "./pages/MemesPage/MemesPage";
+import SingleMemePage from "./pages/SingleMemePage/SingleMemePage";
+import NotFound from "./pages/NotFound/NotFound";
 
 const App = () => {
   return (
-    <div>
-      <Example />
+    <div className="pageWrp">
+      <Routes>
+        <Route path="/" element={<MemesPage />} />
+
+        <Route path="/:memeId" element={<SingleMemePage />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </div>
   );
 };
