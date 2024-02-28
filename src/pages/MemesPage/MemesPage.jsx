@@ -8,6 +8,7 @@ const MemesPage = () => {
   const [textBottom, setTextBottom] = useState("");
   const [number, setNumber] = useState(0);
   const [textColor, setTextColor] = useState("black");
+  const [imgSrc, setImgSrc] = useState(null);
   const colors = ["red", "green", "black", "white"];
 
   useEffect(() => {
@@ -15,6 +16,13 @@ const MemesPage = () => {
       .then((res) => setMemes(res.data.memes))
       .catch((error) => console.log(error.message));
   }, []);
+  useEffect(() => {
+    return () => {
+      if (imgSrc) {
+        window.URL.revokeObjectURL(imgSrc);
+      }
+    };
+  }, [imgSrc]);
 
   // function handleSubmit(e) {
   //   e.preventDefault();
@@ -39,6 +47,11 @@ const MemesPage = () => {
       setTextColor(e.target.id);
       console.log(e.target.id);
     }
+  }
+  function handleFiles(e) {
+    console.log(window.URL.createObjectURL(e.target.files[0]));
+    setImgSrc(window.URL.createObjectURL(e.target.files[0]));
+    // window.URL.createObjectURL(files[0]);
   }
   return (
     <div className={styles.pageWrp}>
@@ -127,6 +140,21 @@ const MemesPage = () => {
         >
           Next
         </button>
+      </div>
+      <input
+        type="file"
+        id="fileElem"
+        accept="image/*"
+        // style={{ display: "none" }}
+        // onChange={handleFiles(this.files)}
+        onChange={handleFiles}
+      />
+      <a href="#" id="fileSelect">
+        Select some files
+      </a>
+      <div id="fileList">
+        <p>No files selected!</p>
+        {imgSrc && <img src={imgSrc} alt="" />}
       </div>
     </div>
   );
