@@ -12,8 +12,8 @@
 .memeTextTop {
   font-size: 1.3rem;
   position: absolute;
-  top: 30px;
-  left: 15px;
+  top: 40px;
+  left: 25px;
   color: white;
   font-family: "Impact", sans-serif;
   letter-spacing: 3px;
@@ -22,7 +22,7 @@
   font-size: 1.3rem;
   position: absolute;
   bottom: 50px;
-  left: 15px;
+  left: 25px;
   color: white;
   font-family: "Impacted", sans-serif;
   letter-spacing: 3px;

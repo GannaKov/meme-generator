@@ -6,6 +6,7 @@ const MemesPage = () => {
   const [memes, setMemes] = useState(null);
   const [textTop, setTextTop] = useState("");
   const [textBottom, setTextBottom] = useState("");
+  const [number, setNumber] = useState(0);
 
   useEffect(() => {
     getAllMemes()
@@ -17,16 +18,21 @@ const MemesPage = () => {
   //   e.preventDefault();
   //   console.log("forms", e);
   // }
-
+  function handleNextBtnClick() {
+    setNumber((prev) => prev + 1);
+  }
+  function handlePrevBtnClick() {
+    setNumber((prev) => prev - 1);
+  }
   return (
     <div>
       {memes && (
         <div className={styles.memeCard}>
-          <p>{memes[0].name}</p>
+          <p>{memes[number].name}</p>
           <img
             className={styles.memeImg}
-            src={memes[0].url}
-            alt={memes[0].name}
+            src={memes[number].url}
+            alt={memes[number].name}
           />
           <p className={styles.memeTextTop}>{textTop}</p>
           <p className={styles.memeTextBottom}>{textBottom}</p>
@@ -57,6 +63,12 @@ const MemesPage = () => {
             </li>
           ))}
       </ul> */}
+      <button type="button" onClick={handleNextBtnClick}>
+        Next
+      </button>
+      <button type="button" onClick={handlePrevBtnClick}>
+        Previous
+      </button>
     </div>
   );
 };
