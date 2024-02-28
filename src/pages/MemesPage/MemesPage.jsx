@@ -30,6 +30,8 @@ const MemesPage = () => {
   function handlePrevBtnClick() {
     if (number != 0) {
       setNumber((prev) => prev - 1);
+      setTextTop("");
+      setTextBottom("");
     }
   }
   function handleColorText(e) {
