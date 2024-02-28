@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import MemesPage from "./pages/MemesPage/MemesPage";
-import SingleMemePage from "./pages/SingleMemePage/SingleMemePage";
+// import SingleMemePage from "./pages/SingleMemePage/SingleMemePage";
 import NotFound from "./pages/NotFound/NotFound";
 
 const App = () => {
@@ -10,7 +10,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<MemesPage />} />
 
-        <Route path="/:memeId" element={<SingleMemePage />} />
+        {/* <Route path="/:memeId" element={<SingleMemePage />} /> */}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

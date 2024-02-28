@@ -3,10 +3,12 @@ import { getAllMemes } from "../../services/requests";
 import styles from "./MemesPage.module.css";
 
 const MemesPage = () => {
-  const [memes, setMemes] = useState(null);
+  const [memes, setMemes] = useState([]);
   const [textTop, setTextTop] = useState("");
   const [textBottom, setTextBottom] = useState("");
   const [number, setNumber] = useState(0);
+  const [textColor, setTextColor] = useState("black");
+  const colors = ["red", "green", "black", "white"];
 
   useEffect(() => {
     getAllMemes()
@@ -19,35 +21,78 @@ const MemesPage = () => {
   //   console.log("forms", e);
   // }
   function handleNextBtnClick() {
-    setNumber((prev) => prev + 1);
+    if (number < memes.length - 1) {
+      setNumber((prev) => prev + 1);
+      setTextTop("");
+      setTextBottom("");
+    }
   }
   function handlePrevBtnClick() {
-    setNumber((prev) => prev - 1);
+    if (number != 0) {
+      setNumber((prev) => prev - 1);
+    }
+  }
+  function handleColorText(e) {
+    if (e.target.id) {
+      setTextColor(e.target.id);
+      console.log(e.target.id);
+    }
   }
   return (
-    <div>
-      {memes && (
-        <div className={styles.memeCard}>
-          <p>{memes[number].name}</p>
-          <img
-            className={styles.memeImg}
-            src={memes[number].url}
-            alt={memes[number].name}
-          />
-          <p className={styles.memeTextTop}>{textTop}</p>
-          <p className={styles.memeTextBottom}>{textBottom}</p>
+    <div className={styles.pageWrp}>
+      <div className={styles.colorBoxWrp}>
+        <p className={styles.colorTitle}>Choose color for text</p>
+        <div className={styles.colorBtnWrp} onClick={handleColorText}>
+          {colors.map((box) => (
+            <div
+              key={box}
+              className={styles.colorBtn}
+              style={{ backgroundColor: box }}
+              //
+              id={box}
+            ></div>
+          ))}
+
+          {/* <div className={styles.colorBtn}></div>
+        <div className={styles.colorBtn}></div> */}
         </div>
-      )}
-      <form>
-        <label htmlFor="textTop">Text Top</label>
+      </div>
+      <form className={styles.memeForm}>
+        <label htmlFor="textTop" className={styles.memeLabel}>
+          Text Top
+        </label>
         <input
+          className={styles.memeInput}
           type="text"
           name="textTop"
           value={textTop}
           onChange={(e) => setTextTop(e.target.value)}
         />
-        <label htmlFor="textBotton">Text Bottom</label>
+      </form>
+      {memes.length > 0 && (
+        <div className={styles.memeCard}>
+          <p className={styles.memeTitle}>{memes[number].name}</p>
+          <div className={styles.imgWrp}>
+            <img
+              className={styles.memeImg}
+              src={memes[number].url}
+              alt={memes[number].name}
+            />
+            <p className={styles.memeTextTop} style={{ color: textColor }}>
+              {textTop}
+            </p>
+            <p className={styles.memeTextBottom} style={{ color: textColor }}>
+              {textBottom}
+            </p>
+          </div>
+        </div>
+      )}
+      <form className={styles.memeForm}>
+        <label htmlFor="textBotton" className={styles.memeLabel}>
+          Text Bottom
+        </label>
         <input
+          className={styles.memeInput}
           type="text"
           name="textBottom"
           value={textBottom}
@@ -63,12 +108,22 @@ const MemesPage = () => {
             </li>
           ))}
       </ul> */}
-      <button type="button" onClick={handleNextBtnClick}>
-        Next
-      </button>
-      <button type="button" onClick={handlePrevBtnClick}>
-        Previous
-      </button>
+      <div className={styles.memeBtnWrp}>
+        <button
+          type="button"
+          onClick={handlePrevBtnClick}
+          className={styles.memeBtn}
+        >
+          Previous
+        </button>
+        <button
+          type="button"
+          onClick={handleNextBtnClick}
+          className={styles.memeBtn}
+        >
+          Next
+        </button>
+      </div>
     </div>
   );
 };

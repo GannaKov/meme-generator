@@ -1,20 +1,66 @@
+.pageWrp {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.colorBoxWrp {
+  border: 1px dashed gray;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  padding: 1rem;
+}
+.colorBtnWrp {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+}
+.colorTitle {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  text-decoration: underline;
+}
+.colorBtn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid gray;
+  cursor: pointer;
+  /* background-color: red; */
+}
 .memeCard {
-  position: relative;
-  margin: 0 auto;
+  padding: 1rem;
+  margin: 0 auto 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 500px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px #6d035f1f, 0 0 5px #7228790f, 0 0 8px #00000029;
+}
+.imgWrp {
+  position: relative;
+  /* display: flex; */
+}
+.memeTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
 }
 .memeImg {
   width: 100%;
+}
+.memeBtnWrp {
+  display: flex;
+  justify-content: space-between;
 }
 .memeTextTop {
   font-size: 1.3rem;
   position: absolute;
   top: 40px;
   left: 25px;
-  color: white;
+  /* color: white; */
   font-family: "Impact", sans-serif;
   letter-spacing: 3px;
 }
@@ -23,9 +69,39 @@
   position: absolute;
   bottom: 50px;
   left: 25px;
-  color: white;
+  /* color: white; */
   font-family: "Impacted", sans-serif;
   letter-spacing: 3px;
 }
-
+.memeBtn {
+  background-color: white;
+  outline: 1px solid transparent;
+  border: 1px solid gray;
+  border-radius: 5px;
+  width: 100px;
+  height: 40px;
+}
+.memeBtn:is(:focus, :hover) {
+  background-color: green;
+  color: white;
+}
+.memeForm {
+  margin: 0 auto 1rem;
+}
+.memeLabel {
+  margin-right: 1rem;
+  font-size: 1.2rem;
+}
+.memeInput {
+  outline: 1px solid transparent;
+  border: 1px solid gray;
+  border-radius: 5px;
+  background-color: transparent;
+  width: 300px;
+  height: 30px;
+}
+.memeInput:is(:focus, :hover) {
+  border: 2px solid gray;
+  /* background-color: white; */
+}
 /* font-family: "Impacted", sans-serif; */
