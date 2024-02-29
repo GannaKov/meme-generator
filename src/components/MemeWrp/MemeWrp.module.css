@@ -11,7 +11,6 @@
 }
 .imgWrp {
   position: relative;
-  /* display: flex; */
 }
 .memeTitle {
   font-size: 1.5rem;
@@ -27,7 +26,7 @@
   position: absolute;
   top: 40px;
   left: 25px;
-  /* color: white; */
+
   font-family: "Impact", sans-serif;
   letter-spacing: 3px;
 }
@@ -36,7 +35,7 @@
   position: absolute;
   bottom: 50px;
   left: 25px;
-  /* color: white; */
+
   font-family: "Impacted", sans-serif;
   letter-spacing: 3px;
 }
