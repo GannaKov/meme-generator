@@ -16,8 +16,6 @@ const ColorBox = ({ colors, handleColorText }) => {
           ></div>
         ))}
 
-        {/* <div className={styles.colorBtn}></div>
-        <div className={styles.colorBtn}></div> */}
       </div>
     </div>
   );

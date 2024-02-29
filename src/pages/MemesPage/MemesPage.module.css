@@ -4,31 +4,7 @@
   flex-direction: column;
   align-items: center;
 }
-/* .colorBoxWrp {
-  border: 1px dashed gray;
-  margin-bottom: 1rem;
-  border-radius: 5px;
-  padding: 1rem;
-}
-.colorBtnWrp {
-  display: flex;
-  gap: 3rem;
-  justify-content: center;
-}
-.colorTitle {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-  text-align: center;
-  text-decoration: underline;
-}
-.colorBtn {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
 
-  cursor: pointer;
-  box-shadow: 0 1px 3px #6d035f1f, 0 0 5px #7228790f, 0 0 8px #00000029;
-} */
 .memeCard {
   padding: 1rem;
   margin: 0 auto 1rem;
@@ -45,37 +21,14 @@
   font-weight: 600;
   margin-bottom: 1rem;
 }
-/* .imgWrp {
-  position: relative;
-}
 
-.memeImg {
-  width: 100%;
-} */
 .memeBtnWrp {
   width: 500px;
 
   display: flex;
   justify-content: space-between;
 }
-/* .memeTextTop {
-  font-size: 1.3rem;
-  position: absolute;
-  top: 40px;
-  left: 25px;
 
-  font-family: "Impact", sans-serif;
-  letter-spacing: 3px;
-}
-.memeTextBottom {
-  font-size: 1.3rem;
-  position: absolute;
-  bottom: 50px;
-  left: 25px;
-
-  font-family: "Impacted", sans-serif;
-  letter-spacing: 3px;
-} */
 .memeBtn {
   background-color: white;
   outline: 1px solid transparent;
@@ -126,4 +79,8 @@
   width: 100px;
   height: 40px;
   margin-bottom: 1rem;
+}
+.downloadBtn:is(:focus, :hover) {
+  color: white;
+  background-color: black;
 }

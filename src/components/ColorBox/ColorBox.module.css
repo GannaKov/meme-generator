@@ -20,8 +20,6 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  /* border: 1px solid gray; */
   cursor: pointer;
   box-shadow: 0 1px 3px #6d035f1f, 0 0 5px #7228790f, 0 0 8px #00000029;
-  /* background-color: red; */
 }

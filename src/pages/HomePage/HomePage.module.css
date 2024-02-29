@@ -1,0 +1,22 @@
+.homeWrp {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.navWrp {
+  margin-top: 5rem;
+}
+.navTextTop {
+  font-family: "Kavoon", serif;
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  color: rgb(43, 47, 43);
+}
+.navLink:is(:focus, :hover) {
+  color: blueviolet;
+}
+.navImg {
+  width: 400px;
+  margin: 0 auto;
+}
