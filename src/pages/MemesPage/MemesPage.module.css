@@ -2,8 +2,9 @@
   padding: 1rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
-.colorBoxWrp {
+/* .colorBoxWrp {
   border: 1px dashed gray;
   margin-bottom: 1rem;
   border-radius: 5px;
@@ -24,11 +25,10 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  /* border: 1px solid gray; */
+
   cursor: pointer;
   box-shadow: 0 1px 3px #6d035f1f, 0 0 5px #7228790f, 0 0 8px #00000029;
-  /* background-color: red; */
-}
+} */
 .memeCard {
   padding: 1rem;
   margin: 0 auto 1rem;
@@ -40,28 +40,30 @@
   border-radius: 5px;
   box-shadow: 0 1px 3px #6d035f1f, 0 0 5px #7228790f, 0 0 8px #00000029;
 }
-.imgWrp {
-  position: relative;
-  /* display: flex; */
-}
 .memeTitle {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
 }
+/* .imgWrp {
+  position: relative;
+}
+
 .memeImg {
   width: 100%;
-}
+} */
 .memeBtnWrp {
+  width: 500px;
+
   display: flex;
   justify-content: space-between;
 }
-.memeTextTop {
+/* .memeTextTop {
   font-size: 1.3rem;
   position: absolute;
   top: 40px;
   left: 25px;
-  /* color: white; */
+
   font-family: "Impact", sans-serif;
   letter-spacing: 3px;
 }
@@ -70,10 +72,10 @@
   position: absolute;
   bottom: 50px;
   left: 25px;
-  /* color: white; */
+
   font-family: "Impacted", sans-serif;
   letter-spacing: 3px;
-}
+} */
 .memeBtn {
   background-color: white;
   outline: 1px solid transparent;
@@ -96,7 +98,7 @@
   color: rgba(16, 16, 16, 0.3);
   opacity: 0.5;
 }
-.memeForm {
+/* .memeForm {
   margin: 0 auto 1rem;
 }
 .memeLabel {
@@ -113,7 +115,6 @@
 }
 .memeInput:is(:focus, :hover) {
   border: 2px solid gray;
-  /* background-color: white; */
-}
+} */
 
 /* font-family: "Impacted", sans-serif; */

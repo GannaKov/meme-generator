@@ -1,0 +1,27 @@
+.colorBoxWrp {
+  border: 1px dashed gray;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  padding: 1rem;
+  width: 500px;
+}
+.colorBtnWrp {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+}
+.colorTitle {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  text-decoration: underline;
+}
+.colorBtn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  /* border: 1px solid gray; */
+  cursor: pointer;
+  box-shadow: 0 1px 3px #6d035f1f, 0 0 5px #7228790f, 0 0 8px #00000029;
+  /* background-color: red; */
+}

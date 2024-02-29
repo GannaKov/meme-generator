@@ -3,15 +3,22 @@ import "./App.css";
 import MemesPage from "./pages/MemesPage/MemesPage";
 // import SingleMemePage from "./pages/SingleMemePage/SingleMemePage";
 import NotFound from "./pages/NotFound/NotFound";
+import HomePage from "./pages/HomePage/HomePage";
+import CustomMemePage from "./pages/CustomMemePage/CustomMemePage";
+import SharedLayout from "./components/SharedLayout/SharedLayout";
 
 const App = () => {
   return (
-    <div className="pageWrp">
+    <div>
+      {/* //className="pageWrp" */}
       <Routes>
-        <Route path="/" element={<MemesPage />} />
+        <Route path="/" element={<SharedLayout />}>
+          <Route index="true" element={<HomePage />} />
+          <Route path="/memes" element={<MemesPage />} />
+          <Route path="/custom" element={<CustomMemePage />} />
 
-        {/* <Route path="/:memeId" element={<SingleMemePage />} /> */}
-        <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
       </Routes>
     </div>
   );

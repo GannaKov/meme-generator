@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { getAllMemes } from "../../services/requests";
 import styles from "./MemesPage.module.css";
+import ColorBox from "../../components/ColorBox/ColorBox";
+import Form from "../../components/Form/Form";
+import MemeWrp from "../../components/MemeWrp/MemeWrp";
 
 const MemesPage = () => {
   const [memes, setMemes] = useState([]);
@@ -8,7 +11,7 @@ const MemesPage = () => {
   const [textBottom, setTextBottom] = useState("");
   const [number, setNumber] = useState(0);
   const [textColor, setTextColor] = useState("black");
-  const [imgSrc, setImgSrc] = useState(null);
+  // const [imgSrc, setImgSrc] = useState(null);
   const colors = ["red", "green", "black", "white"];
 
   useEffect(() => {
@@ -16,13 +19,6 @@ const MemesPage = () => {
       .then((res) => setMemes(res.data.memes))
       .catch((error) => console.log(error.message));
   }, []);
-  useEffect(() => {
-    return () => {
-      if (imgSrc) {
-        window.URL.revokeObjectURL(imgSrc);
-      }
-    };
-  }, [imgSrc]);
 
   // function handleSubmit(e) {
   //   e.preventDefault();
@@ -48,14 +44,10 @@ const MemesPage = () => {
       console.log(e.target.id);
     }
   }
-  function handleFiles(e) {
-    console.log(window.URL.createObjectURL(e.target.files[0]));
-    setImgSrc(window.URL.createObjectURL(e.target.files[0]));
-    // window.URL.createObjectURL(files[0]);
-  }
+
   return (
     <div className={styles.pageWrp}>
-      <div className={styles.colorBoxWrp}>
+      {/* <div className={styles.colorBoxWrp}>
         <p className={styles.colorTitle}>Choose color for text</p>
         <div className={styles.colorBtnWrp} onClick={handleColorText}>
           {colors.map((box) => (
@@ -67,12 +59,10 @@ const MemesPage = () => {
               id={box}
             ></div>
           ))}
-
-          {/* <div className={styles.colorBtn}></div>
-        <div className={styles.colorBtn}></div> */}
         </div>
-      </div>
-      <form className={styles.memeForm}>
+      </div> */}
+      <ColorBox colors={colors} handleColorText={handleColorText} />
+      {/* <form className={styles.memeForm}>
         <label htmlFor="textTop" className={styles.memeLabel}>
           Text Top
         </label>
@@ -83,8 +73,10 @@ const MemesPage = () => {
           value={textTop}
           onChange={(e) => setTextTop(e.target.value)}
         />
-      </form>
-      {memes.length > 0 && (
+      </form> */}
+      <Form text={textTop} setText={setTextTop} forLabel="Text Top"></Form>
+
+      {/* {memes.length > 0 && (
         <div className={styles.memeCard}>
           <p className={styles.memeTitle}>{memes[number].name}</p>
           <div className={styles.imgWrp}>
@@ -101,8 +93,21 @@ const MemesPage = () => {
             </p>
           </div>
         </div>
+      )} */}
+
+      {memes.length > 0 && (
+        <div className={styles.memeCard}>
+          <p className={styles.memeTitle}>{memes[number].name}</p>
+          <MemeWrp
+            src={memes[number].url}
+            alt={memes[number].name}
+            textColor={textColor}
+            textTop={textTop}
+            textBottom={textBottom}
+          />
+        </div>
       )}
-      <form className={styles.memeForm}>
+      {/* <form className={styles.memeForm}>
         <label htmlFor="textBotton" className={styles.memeLabel}>
           Text Bottom
         </label>
@@ -113,16 +118,13 @@ const MemesPage = () => {
           value={textBottom}
           onChange={(e) => setTextBottom(e.target.value)}
         />
-      </form>
-      {/* <ul>
-        {memes &&
-          memes.map((meme) => (
-            <li key={meme.id}>
-              <p>{meme.name}</p>
-              <img style={{ width: 400 }} src={meme.url} alt={meme.name} />
-            </li>
-          ))}
-      </ul> */}
+      </form> */}
+      <Form
+        text={textBottom}
+        setText={setTextBottom}
+        forLabel="Text Bottom"
+      ></Form>
+
       <div className={styles.memeBtnWrp}>
         <button
           type="button"
@@ -140,21 +142,6 @@ const MemesPage = () => {
         >
           Next
         </button>
-      </div>
-      <input
-        type="file"
-        id="fileElem"
-        accept="image/*"
-        // style={{ display: "none" }}
-        // onChange={handleFiles(this.files)}
-        onChange={handleFiles}
-      />
-      <a href="#" id="fileSelect">
-        Select some files
-      </a>
-      <div id="fileList">
-        <p>No files selected!</p>
-        {imgSrc && <img src={imgSrc} alt="" />}
       </div>
     </div>
   );
