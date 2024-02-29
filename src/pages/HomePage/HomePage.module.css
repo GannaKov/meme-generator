@@ -1,11 +1,12 @@
 .homeWrp {
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  padding: 5rem 1rem 3rem;
 }
 .navWrp {
-  margin-top: 5rem;
 }
 .navTextTop {
   font-family: "Kavoon", serif;
@@ -17,6 +18,10 @@
   color: blueviolet;
 }
 .navImg {
-  width: 400px;
   margin: 0 auto;
+}
+@media screen and (min-width: 800px) {
+  .navImg {
+    width: 400px;
+  }
 }

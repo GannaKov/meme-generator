@@ -5,9 +5,12 @@ const SharedLayout = () => {
   return (
     <div className={styles.wrapper}>
       <header className={styles.headerWrp}>
-        <p className={styles.headerTitle}>
-          Love Memes? You are in the right Place Love Meme? 🤩{" "}
-        </p>
+        <div className={styles.headerTitleWrp}>
+          <p className={styles.headerTitle}>
+            Love Memes? You are in the right Place Love Meme? 🤩{" "}
+          </p>
+        </div>
+
         <nav>
           <ul className={styles.navList}>
             <li>
