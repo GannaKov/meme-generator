@@ -26,6 +26,9 @@
   position: absolute;
   top: 40px;
   left: 25px;
+  /* width: 400px; */
+  width: calc(100% - 25px);
+  overflow: hidden;
 
   font-family: "Impact", sans-serif;
   letter-spacing: 3px;
@@ -35,6 +38,8 @@
   position: absolute;
   bottom: 50px;
   left: 25px;
+  width: calc(100% - 25px);
+  overflow: hidden;
 
   font-family: "Impacted", sans-serif;
   letter-spacing: 3px;

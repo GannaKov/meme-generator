@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { useRef } from "react";
+import domtoimage from "dom-to-image";
 import styles from "./CustomMemePage.module.css";
 
 import ColorBox from "../../components/ColorBox/ColorBox";
@@ -6,6 +8,7 @@ import Form from "../../components/Form/Form";
 import MemeWrp from "../../components/MemeWrp/MemeWrp";
 
 const CustomMemePage = () => {
+  const memeContainerRef = useRef(null);
   const [imgSrc, setImgSrc] = useState(null);
   const [textTop, setTextTop] = useState("");
   const [textBottom, setTextBottom] = useState("");
@@ -24,6 +27,20 @@ const CustomMemePage = () => {
   function handleFiles(e) {
     console.log(window.URL.createObjectURL(e.target.files[0]));
     setImgSrc(window.URL.createObjectURL(e.target.files[0]));
+    setTextTop("");
+    setTextBottom("");
+  }
+
+  function handleDownloadClick() {
+    console.log("memeContainerRef.current", memeContainerRef.current);
+    domtoimage
+      .toJpeg(memeContainerRef.current, { quality: 0.95 })
+      .then(function (dataUrl) {
+        const link = document.createElement("a");
+        link.download = "meme.jpeg";
+        link.href = dataUrl;
+        link.click();
+      });
   }
 
   function handleColorText(e) {
@@ -56,14 +73,24 @@ const CustomMemePage = () => {
           <ColorBox colors={colors} handleColorText={handleColorText} />
           <Form text={textTop} setText={setTextTop} forLabel="Text Top"></Form>
           <div className={styles.memeCard}>
-            <MemeWrp
-              src={imgSrc}
-              alt="My meme"
-              textColor={textColor}
-              textTop={textTop}
-              textBottom={textBottom}
-            />
+            <div ref={memeContainerRef}>
+              <MemeWrp
+                src={imgSrc}
+                alt="My meme"
+                textColor={textColor}
+                textTop={textTop}
+                textBottom={textBottom}
+              />
+            </div>
           </div>
+
+          <button
+            type="button"
+            className={styles.downloadBtn}
+            onClick={handleDownloadClick}
+          >
+            Download
+          </button>
 
           <Form
             text={textBottom}

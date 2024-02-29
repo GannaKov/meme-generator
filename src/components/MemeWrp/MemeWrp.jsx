@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+
 import styles from "./MemeWrp.module.css";
 
 const MemeWrp = ({ src, alt, textColor, textTop, textBottom }) => {
