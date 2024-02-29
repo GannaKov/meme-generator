@@ -22,7 +22,6 @@ const MemesPage = () => {
       .catch((error) => console.log(error.message));
   }, []);
 
-  
   function handleNextBtnClick() {
     if (number < memes.length - 1) {
       setNumber((prev) => prev + 1);

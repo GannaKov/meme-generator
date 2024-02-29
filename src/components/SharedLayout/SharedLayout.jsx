@@ -7,7 +7,7 @@ const SharedLayout = () => {
       <header className={styles.headerWrp}>
         <div className={styles.headerTitleWrp}>
           <p className={styles.headerTitle}>
-            Love Memes? You are in the right Place Love Meme? 🤩{" "}
+            Love Memes? &nbsp;&nbsp;You are in the right Place Love Meme? 🤩
           </p>
         </div>
 

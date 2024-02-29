@@ -26,10 +26,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 500px;
   border: 1px solid gray;
   border-radius: 5px;
   box-shadow: 0 1px 3px #6d035f1f, 0 0 5px #7228790f, 0 0 8px #00000029;
+}
+@media screen and (min-width: 800px) {
+  .memeCard {
+    width: 500px;
+  }
 }
 .imgWrp {
   position: relative;
@@ -44,24 +48,40 @@
 }
 
 .memeTextTop {
-  font-size: 2rem;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
   position: absolute;
-  top: 40px;
-  left: 25px;
-  width: calc(100% - 50px);
+  top: 20px;
+  left: 15px;
+  width: calc(100% - 30px);
   overflow: hidden;
 
   font-family: "Impact", sans-serif;
-  letter-spacing: 3px;
+}
+@media screen and (min-width: 800px) {
+  .memeTextTop {
+    font-size: 2rem;
+    letter-spacing: 3px;
+    top: 40px;
+    left: 25px;
+  }
 }
 .memeTextBottom {
-  font-size: 2rem;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
   position: absolute;
-  bottom: 50px;
-  left: 25px;
-  width: calc(100% - 50px);
+  bottom: 40px;
+  left: 15px;
+  width: calc(100% - 30px);
   overflow: hidden;
 
   font-family: "Impacted", sans-serif;
-  letter-spacing: 3px;
+}
+@media screen and (min-width: 800px) {
+  .memeTextBottom {
+    font-size: 2rem;
+    letter-spacing: 3px;
+    top: 40px;
+    left: 25px;
+  }
 }

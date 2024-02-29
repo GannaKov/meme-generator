@@ -1,5 +1,5 @@
 .pageWrp {
-  padding: 1rem;
+  padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,21 +11,30 @@
 }
 .memeCard {
   padding: 1rem;
-  margin: 0 auto 1rem;
+  margin: 0 auto 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 500px;
+
   border: 1px solid gray;
   border-radius: 5px;
   box-shadow: 0 1px 3px #6d035f1f, 0 0 5px #7228790f, 0 0 8px #00000029;
 }
+@media screen and (min-width: 800px) {
+  .memeCard {
+    width: 500px;
+  }
+}
 .fileUploadLabel {
+  font-family: "Kavoon", serif;
   display: block;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   font-size: 1.2rem;
   text-decoration: underline;
   cursor: pointer;
+}
+.fileUploadLabel:is(:focus, :hover) {
+  color: green;
 }
 .downloadBtn {
   background-color: white;
@@ -34,9 +43,13 @@
   border-radius: 5px;
   width: 100px;
   height: 40px;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 .downloadBtn:is(:focus, :hover) {
   color: white;
   background-color: black;
+}
+.noText {
+  font-family: "Kavoon", serif;
+  color: gray;
 }

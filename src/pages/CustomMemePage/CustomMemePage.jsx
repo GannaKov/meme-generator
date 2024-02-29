@@ -93,7 +93,7 @@ const CustomMemePage = () => {
           ></Form>
         </>
       ) : (
-        <p>No files selected!</p>
+        <p className={styles.noText}>No files selected!</p>
       )}
     </div>
   );
