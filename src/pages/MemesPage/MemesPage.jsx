@@ -5,7 +5,7 @@ import { getAllMemes } from "../../services/requests";
 import styles from "./MemesPage.module.css";
 import ColorBox from "../../components/ColorBox/ColorBox";
 import Form from "../../components/Form/Form";
-import MemeWrp from "../../components/MemeWrp/MemeWrp";
+import SingleMemeWrp from "../../components/SingleMemeWrp/SingleMemeWrp";
 
 const MemesPage = () => {
   const memeContainerRef = useRef(null);
@@ -14,7 +14,6 @@ const MemesPage = () => {
   const [textBottom, setTextBottom] = useState("");
   const [number, setNumber] = useState(0);
   const [textColor, setTextColor] = useState("black");
-  // const [imgSrc, setImgSrc] = useState(null);
   const colors = ["red", "green", "black", "white"];
 
   useEffect(() => {
@@ -23,10 +22,7 @@ const MemesPage = () => {
       .catch((error) => console.log(error.message));
   }, []);
 
-  // function handleSubmit(e) {
-  //   e.preventDefault();
-  //   console.log("forms", e);
-  // }
+  
   function handleNextBtnClick() {
     if (number < memes.length - 1) {
       setNumber((prev) => prev + 1);
@@ -44,12 +40,10 @@ const MemesPage = () => {
   function handleColorText(e) {
     if (e.target.id) {
       setTextColor(e.target.id);
-      console.log(e.target.id);
     }
   }
 
   function handleDownloadClick() {
-    console.log("memeContainerRef.current", memeContainerRef.current);
     domtoimage
       .toJpeg(memeContainerRef.current, { quality: 0.95 })
       .then(function (dataUrl) {
@@ -71,7 +65,7 @@ const MemesPage = () => {
           <p className={styles.memeTitle}>{memes[number].name}</p>
 
           <div ref={memeContainerRef}>
-            <MemeWrp
+            <SingleMemeWrp
               src={memes[number].url}
               alt={memes[number].name}
               textColor={textColor}

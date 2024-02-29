@@ -5,14 +5,7 @@ import styles from "./HomePage.module.css";
 const HomePage = () => {
   return (
     <div
-      className={styles.homeWrp}
-      // style={{
-      //   backgroundImage: `url(${loveMemes})`,
-      //   backgroundRepeat: "no-repeat",
-      //   backgroundPosition: "50% 50%",
-      //   backgroundSize: "auto",
-      // }}
-    >
+      className={styles.homeWrp}>
       <nav className={styles.navWrp}>
         <p className={styles.navTextTop}>
           Would you like to use our memes images?&nbsp;&nbsp;

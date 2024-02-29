@@ -1,8 +1,7 @@
 /* eslint-disable react/prop-types */
+import styles from "./SingleMemeWrp.module.css";
 
-import styles from "./MemeWrp.module.css";
-
-const MemeWrp = ({ src, alt, textColor, textTop, textBottom }) => {
+const SingleMemeWrp = ({ src, alt, textColor, textTop, textBottom }) => {
   return (
     <div className={styles.imgWrp}>
       <img className={styles.memeImg} src={src} alt={alt} />
@@ -16,4 +15,4 @@ const MemeWrp = ({ src, alt, textColor, textTop, textBottom }) => {
   );
 };
 
-export default MemeWrp;
+export default SingleMemeWrp;

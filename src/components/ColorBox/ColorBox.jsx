@@ -11,11 +11,9 @@ const ColorBox = ({ colors, handleColorText }) => {
             key={box}
             className={styles.colorBtn}
             style={{ backgroundColor: box }}
-            //
             id={box}
           ></div>
         ))}
-
       </div>
     </div>
   );

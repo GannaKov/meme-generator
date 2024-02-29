@@ -44,23 +44,22 @@
 }
 
 .memeTextTop {
-  font-size: 1.3rem;
+  font-size: 2rem;
   position: absolute;
   top: 40px;
   left: 25px;
-  /* width: 400px; */
-  width: calc(100% - 25px);
+  width: calc(100% - 50px);
   overflow: hidden;
 
   font-family: "Impact", sans-serif;
   letter-spacing: 3px;
 }
 .memeTextBottom {
-  font-size: 1.3rem;
+  font-size: 2rem;
   position: absolute;
   bottom: 50px;
   left: 25px;
-  width: calc(100% - 25px);
+  width: calc(100% - 50px);
   overflow: hidden;
 
   font-family: "Impacted", sans-serif;

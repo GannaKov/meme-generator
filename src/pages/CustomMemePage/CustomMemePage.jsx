@@ -5,7 +5,8 @@ import styles from "./CustomMemePage.module.css";
 
 import ColorBox from "../../components/ColorBox/ColorBox";
 import Form from "../../components/Form/Form";
-import MemeWrp from "../../components/MemeWrp/MemeWrp";
+
+import SingleMemeWrp from "../../components/SingleMemeWrp/SingleMemeWrp";
 
 const CustomMemePage = () => {
   const memeContainerRef = useRef(null);
@@ -13,7 +14,6 @@ const CustomMemePage = () => {
   const [textTop, setTextTop] = useState("");
   const [textBottom, setTextBottom] = useState("");
   const [textColor, setTextColor] = useState("black");
-  // const [imgSrc, setImgSrc] = useState(null);
   const colors = ["red", "green", "black", "white"];
 
   useEffect(() => {
@@ -25,14 +25,13 @@ const CustomMemePage = () => {
   }, [imgSrc]);
 
   function handleFiles(e) {
-    console.log(window.URL.createObjectURL(e.target.files[0]));
     setImgSrc(window.URL.createObjectURL(e.target.files[0]));
     setTextTop("");
     setTextBottom("");
   }
 
   function handleDownloadClick() {
-    console.log("memeContainerRef.current", memeContainerRef.current);
+    console.log("memeContainerRef.current", memeContainerRef);
     domtoimage
       .toJpeg(memeContainerRef.current, { quality: 0.95 })
       .then(function (dataUrl) {
@@ -46,13 +45,11 @@ const CustomMemePage = () => {
   function handleColorText(e) {
     if (e.target.id) {
       setTextColor(e.target.id);
-      console.log(e.target.id);
     }
   }
   return (
     <div className={styles.pageWrp}>
       <div>
-        {/* className={styles.fileUploadWrp} */}
         <input
           type="file"
           id="fileElem"
@@ -60,9 +57,6 @@ const CustomMemePage = () => {
           style={{ display: "none" }}
           onChange={handleFiles}
         />
-        {/* <a href="#" id="fileSelect">
-          Select some files
-        </a> */}
         <label htmlFor="fileElem" className={styles.fileUploadLabel}>
           Select some files
         </label>
@@ -74,7 +68,7 @@ const CustomMemePage = () => {
           <Form text={textTop} setText={setTextTop} forLabel="Text Top"></Form>
           <div className={styles.memeCard}>
             <div ref={memeContainerRef}>
-              <MemeWrp
+              <SingleMemeWrp
                 src={imgSrc}
                 alt="My meme"
                 textColor={textColor}

@@ -51,26 +51,7 @@
   color: rgba(16, 16, 16, 0.3);
   opacity: 0.5;
 }
-/* .memeForm {
-  margin: 0 auto 1rem;
-}
-.memeLabel {
-  margin-right: 1rem;
-  font-size: 1.2rem;
-}
-.memeInput {
-  outline: 1px solid transparent;
-  border: 1px solid gray;
-  border-radius: 5px;
-  background-color: white;
-  width: 300px;
-  height: 30px;
-}
-.memeInput:is(:focus, :hover) {
-  border: 2px solid gray;
-} */
 
-/* font-family: "Impacted", sans-serif; */
 .downloadBtn {
   background-color: white;
   outline: 1px solid transparent;
