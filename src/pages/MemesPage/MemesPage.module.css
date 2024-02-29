@@ -45,6 +45,7 @@
   width: 100px;
   height: 40px;
   box-shadow: 0 1px 3px #6d035f1f, 0 0 5px #7228790f, 0 0 8px #00000029;
+  color: black;
 }
 .memeBtn:is(:focus, :hover) {
   background-color: rgb(104, 58, 146);
@@ -62,6 +63,7 @@
 }
 
 .downloadBtn {
+  color: black;
   background-color: white;
   outline: 1px solid transparent;
   border: 1px solid gray;
