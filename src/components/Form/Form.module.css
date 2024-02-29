@@ -22,6 +22,6 @@
   height: 30px;
 }
 .memeInput:is(:focus, :hover) {
-  /* border: 2px solid gray; */
+ 
   box-shadow: 0 1px 3px #6d035f1f, 0 0 5px #7228790f, 0 0 8px #00000029;
 }

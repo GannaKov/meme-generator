@@ -59,7 +59,6 @@
 .memeBtn:disabled:is(:focus, :hover) {
   background-color: white;
   color: rgba(16, 16, 16, 0.479);
-  /* opacity: 0.8; */
 }
 
 .downloadBtn {
