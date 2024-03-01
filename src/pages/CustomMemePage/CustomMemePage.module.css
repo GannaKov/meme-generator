@@ -37,6 +37,7 @@
   color: green;
 }
 .downloadBtn {
+  color: black;
   background-color: white;
   outline: 1px solid transparent;
   border: 1px solid gray;

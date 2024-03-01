@@ -45,6 +45,7 @@ const MemesPage = () => {
   function handleDownloadClick() {
     domtoimage
       .toJpeg(memeContainerRef.current, { quality: 0.95 })
+      // eslint-disable-next-line no-unused-vars
       .then((dataUrl) => {
         domtoimage
           .toJpeg(memeContainerRef.current)

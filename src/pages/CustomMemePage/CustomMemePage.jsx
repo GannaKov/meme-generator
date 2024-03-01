@@ -30,17 +30,27 @@ const CustomMemePage = () => {
     setTextBottom("");
   }
 
-  function handleDownloadClick() {
-    console.log("memeContainerRef.current", memeContainerRef);
-    domtoimage
-      .toJpeg(memeContainerRef.current, { quality: 0.95 })
-      .then(function (dataUrl) {
-        const link = document.createElement("a");
-        link.download = "meme.jpeg";
-        link.href = dataUrl;
-        link.click();
-      });
-  }
+ function handleDownloadClick() {
+   domtoimage
+     .toJpeg(memeContainerRef.current, { quality: 0.95 })
+     // eslint-disable-next-line no-unused-vars
+     .then((dataUrl) => {
+       domtoimage
+         .toJpeg(memeContainerRef.current)
+         .then((dataUrl1) => {
+           const link = document.createElement("a");
+           link.download = "meme.jpeg";
+           link.href = dataUrl1;
+           link.click();
+         })
+         .catch((error) => {
+           console.error("oops, something went wrong!", error);
+         });
+     })
+     .catch((error) => {
+       console.error("oops, something went wrong!", error);
+     });
+ }
 
   function handleColorText(e) {
     if (e.target.id) {
