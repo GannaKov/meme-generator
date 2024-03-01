@@ -64,13 +64,14 @@
     letter-spacing: 3px;
     top: 40px;
     left: 25px;
+    width: calc(100% - 50px);
   }
 }
 .memeTextBottom {
   font-size: 1.3rem;
   letter-spacing: 1px;
   position: absolute;
-  bottom: 40px;
+  bottom: 20px;
   left: 15px;
   width: calc(100% - 30px);
   overflow: hidden;
@@ -81,7 +82,8 @@
   .memeTextBottom {
     font-size: 2rem;
     letter-spacing: 3px;
-    top: 40px;
+    bottom: 40px;
     left: 25px;
+    width: calc(100% - 50px);
   }
 }
