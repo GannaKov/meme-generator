@@ -45,14 +45,41 @@ const MemesPage = () => {
   function handleDownloadClick() {
     domtoimage
       .toJpeg(memeContainerRef.current, { quality: 0.95 })
-      .then(function (dataUrl) {
-        const link = document.createElement("a");
-        link.download = "meme.jpeg";
-        link.href = dataUrl;
-        link.click();
+      .then((dataUrl) => {
+        domtoimage
+          .toJpeg(memeContainerRef.current)
+          .then((dataUrl1) => {
+            const link = document.createElement("a");
+            link.download = "meme.jpeg";
+            link.href = dataUrl1;
+            link.click();
+          })
+          .catch((error) => {
+            console.error("oops, something went wrong!", error);
+          });
+      })
+      .catch((error) => {
+        console.error("oops, something went wrong!", error);
       });
   }
-
+  // let item = document.getElementById("whiteboard-frame");
+  // console.log(item);
+  // domtoimage
+  //   .toPng(item)
+  //   .then((dataUrl) => {
+  //     domtoimage
+  //       .toPng(item)
+  //       .then((dataUrl1) => {
+  //         this.savedImage = dataUrl1;
+  //         console.log(this.savedImage);
+  //       })
+  //       .catch((error) => {
+  //         console.error("oops, something went wrong!", error);
+  //       });
+  //   })
+  //   .catch((error) => {
+  //     console.error("oops, something went wrong!", error);
+  //   });
   return (
     <div className={styles.pageWrp}>
       <ColorBox colors={colors} handleColorText={handleColorText} />
